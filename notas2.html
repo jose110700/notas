@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Notas Parciales | Universidad Bicentenaria de Aragua</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link media="all" type="text/css" rel="stylesheet" href="http://secretariauba.net.ve/public/css/normalize.css">
+        <link media="all" type="text/css" rel="stylesheet" href="http://secretariauba.net.ve/public/css/main.css">
+        <link media="all" type="text/css" rel="stylesheet" href="http://secretariauba.net.ve/public/css/bootstrap.min.css">
+        <link media="all" type="text/css" rel="stylesheet" href="http://secretariauba.net.ve/public/css/bootstrap.css">
+
+        <link media="all" type="text/css" rel="stylesheet" href="http://secretariauba.net.ve/public/css/estilo.css">
+          <link media="all" type="text/css" rel="stylesheet" href="http://secretariauba.net.ve/public/css/jquery_ui.css">
+  <link media="all" type="text/css" rel="stylesheet" href="http://secretariauba.net.ve/public/css/datepicker.css">
+  <style>
+    table.puntos thead td:not(:first-child){
+      border: 1px solid black;
+      text-align: center;
+    }
+    table.seleccion td{
+      padding: 10px;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+  </style>
+    	<link rel="shortcut icon" href="http://secretariauba.net.ve/public/images/favicon.ico">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+	<div id="conteiner">
+		<!-- Master Header -->
+		<header id="master-header">
+			<div id="master-header-bg"></div>
+			<div id="master-header-wrap">
+				<!-- Logo -->
+				<div id="logo" class="logo_uba"><a href="http://secretariauba.net.ve/public/inicio"><img style="background-color: white;" src="http://secretariauba.net.ve/public/images/uba.png" alt="" /></a></div>
+				<!--  or, for logo image: <div id="logo"><a href="index.html"><img src="http://secretariauba.net.ve/public/images/uba.png" alt="" /></a></div> -->
+				<!-- ..Logo -->
+				<!-- Navi -->
+				<nav id="master-nav">
+					<ul>
+						<li><a href="#">Inicio</a></li>
+						<li class="dropdown hassubmenu">
+							<a style="pointer-events: none;" href="#">Servicios Acad&eacute;mico <b class="caret"></b></a>
+							<ul>
+								<li><a href="#">Solicitud Servicio</a></li>
+								<li><a href="#">Historial Solicitudes</a></li>
+								<li><a href="#">Costos y D&iacute;as de Entrega</a></li>
+							</ul>
+						</li>
+						<li class="dropdown hassubmenu">
+							<a style="pointer-events: none;" href="#">Solvencias <b class="caret"></b></a>
+							<ul>
+								<li><a href="#">Cuentas Bancarias UBA</a></li>
+																<li><a href="#">Pagos Académicos</a></li>
+								<li><a href="#">Historial de Pagos</a></li>
+																<li><a href="#">Bibliotecas</a></li>
+								<li><a href="#">Administrativo</a></li>
+								<li><a href="#">Documentos</a></li>
+								<li><a href="#">Req. Grado</a></li>
+							</ul>
+						</li>
+						<li class="dropdown hassubmenu">
+							<a style="pointer-events: none;" href="#">Aula Virtual <b class="caret"></b></a>
+							<ul>
+								<li><a href="#">Pregrado</a></li>
+								<li><a href="#">Idiomas e Inform&aacute;tica</a></li>
+							</ul>
+						</li>
+						<li class="dropdown hassubmenu">
+							<a style="pointer-events: none;" href="#">Procesos Acad&eacute;micos <b class="caret"></b></a>
+							<ul>
+								<li><a style="pointer-events: none;" href="#">Inscripci&oacute;n en L&iacute;nea</a>
+									<ul>
+																					<li><a href="#">notas/a></li>
+											<li><a href="#">Adici&oacute;n de Asignaturas</a></li>
+											<li><a href="#">Cambios de Secci&oacute;n</a></li>
+
+											<li><a href="#">Retiro de Asignaturas</a></li>
+																						<li><a href="#">Prueba Remedial</a></li>
+																						<li><a href="#">Inscripci&oacute;n de Talleres Culturales</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Intensivo<b class="caret"></b></a>
+									<ul>
+										<li><a href="#">Oferta verano</a></li>
+										<li><a href="#">Solicitud Verano</a></li>
+										<li><a href="#">Historial / Estatus Solicitud</a></li>
+									</ul>
+
+								<li><a style="pointer-events: none;" href="#">Niveles de Inform&aacute;tica<b class="caret"></b></a>
+									<ul>
+										<li><a href="#">Inscripci&oacute;n</a></li>
+										<li><a href="#">Consultar Inscripci&oacute;n</a></li>
+                    <li><a style="pointer-events: none;" href="#"> Calificaciones Definitivas<b class="caret"></b></a>
+									<ul>
+										<li><a href="http://secretariauba.net.ve/public/estudiante/notasparciales">Parciales</a></li>
+										<li><a href="http://secretariauba.net.ve/public/estudiante/iniciocalifi">Definitivas</a></li>
+									</ul>
+								</li>
+									</ul>
+								</li>
+								<li><a href="#" target="_blank">Niveles de Idiomas<!-- s<b class="caret"></b> --></a>
+									<!-- <ul>
+										<li><a href="http://secretariauba.net.ve/public/proceso/nivelidioma">Inscripci&oacute;n</a></li>
+										<li><a href="http://secretariauba.net.ve/public/proceso/inscripcionidioma">Consultar Inscripci&oacute;n</a></li>
+										<li><a href="http://secretariauba.net.ve/public/proceso/califiidioma">Calificaciones</a></li>
+									</ul> -->
+								</li>
+																<li><a style="pointer-events: none;" href="#">UBISTAENLÍNEA<b class="caret"></b></a>
+									<ul>
+										<li><a href="#">Solicitud</a></li>
+										<li><a href="#">Historial / Estatus Solicitud</a></li>
+																			</ul>
+								</li>
+																<li><a href="#">Solicitud Pasant&iacute;a</a></li>
+								<li><a href="#">Selecci&oacute;n de Menci&oacute;n</a></li>
+							</ul>
+						</li>
+						<li class="dropdown hassubmenu">
+							<a style="pointer-events: none;" href="#"> José Vargas<b class="caret"></b></a>
+							<ul>
+								<li><a href="#">Datos</a></li>
+								<li><a href="#">Horario</a></li>
+								<li><a style="pointer-events: none;" href="#">Calificaciones<b class="caret"></b></a>
+									<ul>
+										<li><a href="#">Parciales</a></li>
+										<li><a href="#">Definitivas</a></li>
+                    <li><a href="#">Definitivas</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Ayuda</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<!-- ..Navi -->
+				<!-- Mobile Button -->
+				<a href="#" id="mobile-switch"><span class="icon-menu"></span></a>
+				<!-- ..Mobile Button -->
+			</div>
+		</header>
+		<!-- ..Master Header -->
+		<section>
+		<!-- Section -->
+		<div class="container container-margin-top">
+  	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-col-sm-12 col-col-xs-12">
+		<h3>Registro de Calificaciones</h3>
+		<div class="panel panel-default">
+		<p class="bg-danger" id="mensaje_error"></p>
+        <div class="panel-body">
+            		<table class="table table-bordered"
+						<thead>
+							<tr class="info">
+					            <th class="text-center">C&oacute;digo</th>
+					            <th class="text-center">Nombre de la materia</th>
+					            <th class="text-center">Secci&oacute;n</th>
+					            <th class="text-center">Acum (100)</th>
+					            <th class="text-center">Acum (20)</th>
+							</tr>
+              <button type="button" name="button"><a href="index.html">20191</a></button>
+              <button type="button" name="button"><a href="notasd2.html">20192</a></button>
+              <button type="button" name="button"><a href="notasd3.html">20193</a></button>
+						</thead><tbody><tr>
+							</tr><tr>
+							<td class="centrado">FEB02F</td>
+							<td class="centrado">FISICA I</td>
+							<td class="centrado">9</td>
+							<td class="centrado">83</td>
+							<td class="centrado">16</td>
+
+							</tr><tr>
+							<td class="centrado">FEB02A</td>
+							<td class="centrado">ALGEBRA LINEAL</td>
+							<td class="centrado">1</td>
+							<td class="centrado">72.3</td>
+							<td class="centrado">14</td>
+
+							</tr><tr>
+							<td class="centrado">FEB02I</td>
+							<td class="centrado">INTRODUCCIÓN A LA INGENIERÍA</td>
+							<td class="centrado">C</td>
+							<td class="centrado">78.98</td>
+							<td class="centrado">15.43</td>
+
+							</tr><tr>
+							<td class="centrado">FG-2EV</td>
+							<td class="centrado">ANÁLISIS Y EXPRESIÓN VERBAL</td>
+							<td class="centrado">2</td>
+							<td class="centrado">89.45</td>
+							<td class="centrado">17</td>
+
+              <tr>
+              <td class="centrado">FG-1EC</td>
+							<td class="centrado">ETICA Y CULTURA UNIVERSITARIA</td>
+							<td class="centrado">9</td>
+							<td class="centrado">88.5</td>
+							<td class="centrado">17</td>
+							</tr>
+              <tr>
+              </tr>
+              <tr>
+              </tr></tbody></table>  			</div>
+		</div>
+	</div>
+<!-- Modal informacion del estudiante -->
+	<div class="modal fade bs-example-modal-sm ventanamodal" id="info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Notas parciales</h4>
+				</div>
+				<div class="modal-body form-horizontal">
+					<div class="form-group">
+						<div class="col-xs-12 col-md-12 col-lg-12"  class="input-group">
+                <div id="tabla_nota"></div>
+  							<div id="tabla_nota2"></div>
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Fin Modal informacion del estudiante -->
+	<!-- Modal informacion del estudiante -->
+
+		<div class="modal fade bs-example-modal-sm ventanamodal" id="parcial" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">Consulta Notas Parciales</h4>
+					</div>
+					<div class="modal-body form-horizontal">
+						<div class="form-group">
+							<div class="col-xs-12 col-md-12 col-lg-12"  class="input-group">
+								<div id="tabla_detalleparcial"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Modal informacion del estudiante -->
+</div>
+		<!-- Section -->
+		</section>
+	</div>
+	<div class="footer">
+
+		<!-- Footer -->
+		<footer id="master-footer" >
+
+			<!-- Container -->
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-8 col-sm-4 col-md-4">
+
+						<h3 class="widget-title">Sitios de Inter&eacute;s</h3>
+
+						<div class="tagcloud">
+							<a href="http://uba.edu.ve">UBA</a>
+							<a href="http://uba-extension.com">Direcci&oacute;n de Extensi&oacute;n</a>
+							<!-- <a href="#">Academia CISCO</a> -->
+							<a href="http://blog.uba.edu.ve">Blog</a>
+						</div>
+
+					</div>
+
+					<div class="col-xs-8 col-sm-4 col-md-4">
+
+						<h3 class="widget-title">Direcci&oacute;n</h3>
+
+						<address class="icon icon-location">
+							Av. Intercomunal Santiago Mari&ntilde;o c/c Av. Universidad. <br> Sector la Providencia. Zona Postal 2115. <br> Municipio Santiago Mari&ntilde;o, Turmero. Edo. Aragua. Venezuela.
+						</address>
+
+					</div>
+
+					<div class="col-xs-8 col-sm-4 col-md-4">
+						<h3 class="widget-title">Contacto</h3>
+						<p class="icon icon-envelop">
+							<strong class="colored">E-mail San Joaquin:</strong> <a href="mailto:soporte.secretaria@uba.edu.ve">soporte.secretaria@uba.edu.ve</a>
+						</p>
+						<p class="icon icon-envelop">
+							<strong class="colored">E-mail San Antonio:</strong> <a href="mailto:soporte.secretaria.sa@uba.edu.ve">soporte.secretaria.sa@uba.edu.ve</a>
+						</p>
+						<p class="icon icon-envelop">
+							<strong class="colored">E-mail Apure:</strong> <a href="mailto:soporte.secretaria.sf@uba.edu.ve">soporte.secretaria.sf@uba.edu.ve</a>
+						</p>
+						<p class="icon icon-envelop">
+							<strong class="colored">E-mail Pto. Ordaz:</strong> <a href="mailto:soporte.secretaria.po@uba.edu.ve">soporte.secretaria.po@uba.edu.ve</a>
+						</p>
+						<p class="icon icon-phone">
+							<strong class="colored">L&iacute;nea Gratuita:</strong> 0.500.UBA.0000
+							<br>
+							<strong class="colored">M&aacute;ster:</strong> +58 243.265.00.11
+							<br>
+							<strong class="colored">Fax:</strong> +58 243.265.00.01
+						</p>
+					</div>
+
+				</div>
+				<div class="modal fade ventanamodal" id="myModalmaster" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+				  			<div class="modal-header">
+				    			<h4 class="modal-title" id="myModalLabel">Tiempo Inactivo</h4>
+				  			</div>
+				  			<div class="modal-body">
+				    			<h4>Se ha cerrado su sesi&oacute;n por tiempo de inactividad</h4>
+				  			</div>
+					  		<div class="modal-footer">
+					    		<a class="btn btn-success" href="http://secretariauba.net.ve/public/inicio">Aceptar</a>
+					  		</div>
+						</div>
+					</div>
+				</div>
+			</div> <!--/. Container -->
+		</footer>
+		<!--/. Footer -->
+		<!-- Copyrights -->
+		<div id="copyrights">
+
+			<!-- Container -->
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xs-12 col-md-12 center">
+						<p>Copyright © 2014 - Universidad Bicentenaria de Aragua. Todos los derechos reservados. <br>
+						Sitio desarrollado por: <strong>Departamento de Inform&aacute;tica</strong></p>
+					</div>
+				</div>
+
+			</div> <!--/. Container -->
+
+		</div>
+	</div>
+
+		<!--/. Copyrights -->
+		<script src="http://secretariauba.net.ve/public/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<script src="http://secretariauba.net.ve/public/js/vendor/jquery-1.10.1.min.js"></script>
+		<script src="http://secretariauba.net.ve/public/js/jquery.js"></script>
+		<script src="http://secretariauba.net.ve/public/js/bootstrap.min.js"></script>
+		<script src="http://secretariauba.net.ve/public/js/plugins/jquery.hoverIntent.minified.js"></script>
+		<script src="http://secretariauba.net.ve/public/js/main.js"></script>
+		<script src="http://secretariauba.net.ve/public/js/jquery.isotope.min.js"></script>
+		<script src="http://secretariauba.net.ve/public/js/jquery.flexslider-min.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-59704303-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+		<script type="text/javascript">
+			var timeout;
+			timeout = setTimeout(function(){
+				$('#master-header').css("z-index", '0');
+				$('#myModalmaster').modal({
+					 backdrop: 'static',
+			  		keyboard: false
+				});
+			}, 600000);
+			$('#myModalmaster').on('shown.bs.modal', function (e) {
+				$.ajax({
+					type: "GET",
+					url: "http://secretariauba.net.ve/public/exit"
+				});
+			})
+			document.onmousemove = function(){
+			  	clearTimeout(timeout);
+			  	timeout = setTimeout(
+			  	function(){
+			  		$('#master-header').css("z-index", '0');
+			  		$('#myModalmaster').modal({
+			  			backdrop: 'static',
+			  			keyboard: false
+			  		});
+			  	}, 600000);
+			}
+		</script>
+		<script src="http://secretariauba.net.ve/public/js/solonumeros.js"></script>
+<script src="http://secretariauba.net.ve/public/js/jquery_ui.js"></script>
+<script src="http://secretariauba.net.ve/public/js/datepicker/bootstrap-datepicker.js"></script>
+<script src="http://secretariauba.net.ve/public/js/datepicker/locales/bootstrap-datepicker.es.js"></script>
+<script type="text/javascript" language="javascript">
+
+//JS para eliminar lo(s) servicio(s) de la tabla
+function buscar_notas(id){
+  //Reinicia
+  $("#tabla_nota").empty();
+  $("#tabla_nota2").empty();
+  $("#materias").empty();
+
+		$.ajax({
+  		type: "POST",
+  		url: "http://secretariauba.net.ve/public/estudiante/ajaxencuesta",
+  		dataType: "json",
+  		data: {
+  			id: id
+  		},
+  		cache: false,
+  		success: function(data){
+
+  			if (data == 0){
+          $.ajax({
+          	type: "POST",
+          	url: "http://secretariauba.net.ve/public/estudiante/ajaxcalifiparciales",
+          	dataType: "json",
+          	data: {
+          		id: id
+          	},
+          	cache: false,
+          	success: function(data1){
+          		$("#tabla_nota").html(data1.tabla_nota_p1);
+          		$("#tabla_nota2").html(data1.tabla_nota_p2);
+          		$("#materias").html(data1.materia);
+          		$('#info').modal();
+          	}
+        	});
+        }else{
+          $("#tabla_nota").html(data);
+          $('#info').modal();
+        }
+
+  		}
+	});
+}
+
+//JS para guardar si esta de acuerdo o no con su nota
+function pulsar(id){
+		$.ajax({
+		type: "POST",
+		url: "http://secretariauba.net.ve/public/estudiante/ajaxmodificarcondicion",
+		dataType: "json",
+		data: {
+			id: id
+		},
+		cache: false,
+		success: function(data)
+		{
+			if (data.valor == 0) {
+				$('#pregunta1').prop('disabled', false);
+			}else{
+				$('#pregunta1').prop('disabled', false);
+			}
+		}
+	});
+}
+
+</script>
+    </body>
+</html>
